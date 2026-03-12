@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Repository Statistics Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>GitHub Stats Tool</h1>
+    <p class="subtitle">Enter a GitHub username to see their repository statistics</p>
+
+    <!-- Input Section -->
+    <div class="input-section">
+      <input
+        type="text"
+        id="usernameInput"
+        placeholder="e.g. torvalds"
+      />
+      <button id="fetchBtn" onclick="fetchStats()">Fetch Stats</button>
+    </div>
+
+    <!-- Loading Message -->
+    <p id="loadingMsg" class="hidden"> Loading data...</p>
+
+    <!-- Error Message -->
+    <p id="errorMsg" class="hidden error"></p>
+
+    <!-- Result Section -->
+    <div id="resultSection" class="hidden result-box">
+      <h2>Statistics for <span id="displayName"></span></h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" id="totalRepos">0</div>
+          <div class="stat-label">Total Repos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="totalStars">0</div>
+          <div class="stat-label">Total Stars</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="totalForks">0</div>
+          <div class="stat-label">Total Forks</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
